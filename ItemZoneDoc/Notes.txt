@@ -1,0 +1,98 @@
+mysql> show tables;
++---------------------+    
+| Tables_in_mycompany |     
++---------------------+
+| administrator       |
+| category            |
+| customer            |
+| orderdetails        |
+| product             |
+| seller              |
++---------------------+
+
+mysql> desc administrator;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| username | varchar(20) | NO   | PRI | NULL    |       |
+| password | varchar(20) | NO   |     | NULL    |       |
+| aname    | varchar(15) | NO   |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+mysql> desc category;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ctid   | int         | NO   | PRI | NULL    |       |
+| ctname | varchar(20) | NO   | UNI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+mysql> desc customer;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| customerId | int         | NO   | PRI | NULL    | auto_increment |
+| cname      | varchar(20) | NO   |     | NULL    |                |
+| caddress   | varchar(20) | NO   |     | NULL    |                |
+| cmobile    | varchar(10) | NO   |     | NULL    |                |
+| cemail     | varchar(20) | NO   | UNI | NULL    |                |
+| password   | varchar(20) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+mysql> desc orderdetails;
++------------+------+------+-----+---------+----------------+
+| Field      | Type | Null | Key | Default | Extra          |
++------------+------+------+-----+---------+----------------+
+| orderid    | int  | NO   | PRI | NULL    | auto_increment |
+| customerid | int  | NO   | MUL | NULL    |                |
+| sellerid   | int  | NO   |     | NULL    |                |
+| categoryid | int  | NO   | MUL | NULL    |                |
+| quantity   | int  | NO   |     | NULL    |                |
+| orderprice | int  | NO   |     | NULL    |                |
+| OrderDate  | date | NO   |     | NULL    |                |
++------------+------+------+-----+---------+----------------+
+
+mysql> desc product;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| pid      | int         | NO   | PRI | NULL    |       |
+| pname    | varchar(20) | NO   |     | NULL    |       |
+| price    | int         | NO   |     | NULL    |       |
+| unit     | int         | NO   |     | NULL    |       |
+| sellerid | int         | NO   | MUL | NULL    |       |
+| cid      | int         | NO   | MUL | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+mysql> desc seller;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| sellerId | int         | NO   | PRI | NULL    | auto_increment |
+| sname    | varchar(20) | NO   |     | NULL    |                |
+| saddress | varchar(20) | NO   |     | NULL    |                |
+| semail   | varchar(20) | NO   | UNI | NULL    |                |
+| password | varchar(20) | NO   |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
